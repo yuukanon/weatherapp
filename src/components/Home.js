@@ -1,10 +1,14 @@
 import React from 'react';
+import Title from './Title';
+import CurrentWeather from './CurrentWeather';
 
 
-const Home = () => {
+const Home = (props) => {
+  console.log(props)
   return (
     <>
-    text
+      <Title cityName={props.cityName} />
+      <CurrentWeather data={props.data} />
     </>
   )
 }

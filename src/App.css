@@ -2,3 +2,27 @@
   margin: 0;
   padding: 0;
   }
+
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+  }
+
+  li {
+    padding: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: darkolivegreen;
+  }
+
+  .active {
+    font-weight: bold;
+  }
+
+  .title {
+    font-size: 5vw;
+    text-align: center;
+  }
