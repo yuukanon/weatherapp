@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Search from './components/Search';
+import key from './Key';
 
 
 class App extends Component {
@@ -22,7 +23,7 @@ class App extends Component {
   }
   
   fetchData = () => {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=Lisbon&appid=${key}')
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=Lisbon&appid=${key}`)
     .then(res => res.json())
     .then(data => {this.setState({ 
       data, 
@@ -32,7 +33,7 @@ class App extends Component {
   }
   
   onSearch = (text) => {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=${text}&appid=${key}')
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${text}&appid=${key}`)
     .then(res => res.json())
     .then(data => {this.setState({ 
       data, 
