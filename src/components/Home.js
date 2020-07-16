@@ -4,7 +4,7 @@ import CurrentWeather from './CurrentWeather';
 
 
 const Home = (props) => {
-  console.log(props)
+  // console.log(props)
   return (
     <>
       <Title cityName={props.cityName} />

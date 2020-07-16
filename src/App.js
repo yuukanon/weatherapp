@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Search from './components/Search';
 
 
 class App extends Component {
@@ -21,22 +22,33 @@ class App extends Component {
   }
   
   fetchData = () => {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=Lisbon&appid=5280313c4d7830a877f940cfb8c069cf')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=Lisbon&appid=${key}')
     .then(res => res.json())
-    .then(data => this.setState({ 
+    .then(data => {this.setState({ 
       data, 
       isloaded: true,
-    }))
+     })
+    })
   }
-    
+  
+  onSearch = (text) => {
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=${text}&appid=${key}')
+    .then(res => res.json())
+    .then(data => {this.setState({ 
+      data, 
+      })
+    })
+  }
 
   render() {
+  // console.log(this.state)
     const { data, isloaded } = this.state;
     return (
       <>
         <Navbar />
+        <Search onSearch={this.onSearch} />
         <Switch>
-          <Route exact path='/' render= {() => isloaded && <Home cityName={data.city.name} />}/>
+          <Route exact path='/' render= {() => isloaded && <Home data={data} cityName={data.city.name} />}/>
           <Route path='/contact' component={Contact} />
         </Switch>
         <Footer />
