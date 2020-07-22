@@ -47,7 +47,7 @@ class App extends Component {
       <>
         <Navbar />
         <Switch>
-          <Route exact path='/' render= {() => isloaded && <Home data={data} cityName={data.city.name} />}/>
+          <Route exact path='/' render= {() => isloaded && <Home data={data} onSearch={this.onSearch}cityName={data.city.name} />}/>
           <Route path='/contact' component={Contact} />
         </Switch>
         <Footer />

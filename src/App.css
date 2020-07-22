@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  background-color: lightcyan;
   }
 
   ul {
@@ -15,7 +16,7 @@
 
   a {
     text-decoration: none;
-    color: darkolivegreen;
+    color: lightsalmon;
   }
 
   .active {
@@ -25,4 +26,34 @@
   .title {
     font-size: 5vw;
     text-align: center;
+  }
+
+  .daylist {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .dailydata {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .date {
+    text-align: center;
+  }
+
+  .today {
+    text-align: center;
+    margin: 30px 0px 30px 0px;
+    font-size: 25px;
+  }
+
+  form {
+   margin: 0px 20px 20px 20px;
+  }
+
+  input {
+    border: lightgrey 1px solid;
+    font-size: 18px;
+    background-color: white;
   }

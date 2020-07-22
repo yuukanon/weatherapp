@@ -10,11 +10,12 @@ const CurrentWeather = (props) => {
   // const tempInC = currTemp.toFixed() / 2;
   // const feelsLikeInC = feelsLike.toFixed() / 2;
     return (
-        <>
+        <div className="today">
+            <img src= {`http://openweathermap.org/img/wn/${props.data.list[0].weather[0].icon}@2x.png`} alt=""/>
             <div>Current temperature: {currTemp}F</div>
             <div>Feels like: {feelsLike}F</div>
             <div>Humidity: {props.data.list[0].main.humidity}%</div>
-        </>
+        </div>
   )
 }
 
