@@ -22,20 +22,31 @@ class App extends Component {
   }
   
   fetchData = () => {
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=Lisbon&units=imperial&appid=${key}`)
-    .then(res => res.json())
-    .then(data => {this.setState({ 
-      data, 
-      isloaded: true,
-     })
+    navigator.geolocation.getCurrentPosition(position => {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${key}`)
+        .then(res => res.json())
+        .then(data => this.setState({ 
+          data, 
+          isloaded: true,
+        })
+       )
+    }, () => {
+      fetch(`https://api.openweathermap.org/data/2.5/forecast?q=Budapest&units=imperial&appid=${key}`)
+        .then(res => res.json())
+        .then(data => this.setState({
+          data,
+          isloaded: true,
+        }))
     })
   }
   
   onSearch = (text) => {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${text}&units=imperial&appid=${key}`)
-    .then(res => res.json())
-    .then(data => {this.setState({ 
-      data, 
+      .then(res => res.json())
+      .then(data => {this.setState({ 
+        data, 
       })
     })
   }

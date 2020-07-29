@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: lightcyan;
+  background-color: lightyellow;
   }
 
   ul {
@@ -38,8 +38,12 @@
     justify-content: space-evenly;
   }
 
-  .date {
+
+  .listbox {
+    padding: 10px;
+    border: solid 1px;
     text-align: center;
+
   }
 
   .today {
