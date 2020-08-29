@@ -4,7 +4,6 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
 import key from './key';
 
 
@@ -61,7 +60,6 @@ class App extends Component {
           <Route exact path='/' render= {() => isloaded && <Home data={data} onSearch={this.onSearch}cityName={data.city.name} />}/>
           <Route path='/contact' component={Contact} />
         </Switch>
-        <Footer />
       </>
     );
   }
